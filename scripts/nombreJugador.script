@@ -1,0 +1,7 @@
+$nombreJugador = widget["nombreJugador"].element["0001"].text;
+set_character_name("Ejecutivo",$nombreJugador);
+hide_widget("nombreJugador");
+display_message(player.id, player);
+
+
+

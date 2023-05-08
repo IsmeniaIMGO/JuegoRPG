@@ -1,1 +1,16 @@
-load_map("room_01", coord[-2, -1, 0], NORTH);
+load_map("mapaEmpresa", coord[-2, -1, 0], SOUTH);
+show_widget("nombreJugador");
+assign_entity_id(player, "Ejecutivo");
+display_message(player.id, player);
+
+
+
+
+
+
+
+
+
+
+
+
