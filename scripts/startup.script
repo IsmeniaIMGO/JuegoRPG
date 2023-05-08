@@ -1,7 +1,7 @@
 load_map("mapaEmpresa", coord[-2, -1, 0], SOUTH);
-display_message("Bienvenido a la Empresa, eres un ejecutivo en busca de una oportunidad laboral y deseas conocer");
 show_widget("nombreJugador");
 assign_entity_id(player, "Ejecutivo");
+
 
 
 

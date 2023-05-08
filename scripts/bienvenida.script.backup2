@@ -1,0 +1,1 @@
+display_message("Bienvenido " + player.id + " ,eres un ejecutivo en busca de una oportunidad laboral y deseas conocer la estructura de los sistemas de informacion de nuestra empresa");
