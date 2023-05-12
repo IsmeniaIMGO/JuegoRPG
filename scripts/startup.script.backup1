@@ -1,6 +1,7 @@
 load_map("mapaEmpresa", coord[-2, -1, 0], SOUTH);
 show_widget("nombreJugador");
 assign_entity_id(player, "Ejecutivo");
+play_animation(entity["carro"], "animacionCarro");
 
 
 
