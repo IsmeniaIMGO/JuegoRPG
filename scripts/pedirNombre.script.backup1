@@ -1,0 +1,5 @@
+hide_widget("wgIndicaciones");
+show_widget("wgJugador");
+assign_entity_id(player, "Ejecutivo");
+assign_entity_id(entity["camion"], "camion");
+play_animation(entity["camion"], "animacionCarro");

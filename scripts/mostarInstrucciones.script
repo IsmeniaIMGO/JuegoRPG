@@ -1,3 +1,0 @@
-display_message("Hello, world!");
-hide_widget("widgetMR");
-
