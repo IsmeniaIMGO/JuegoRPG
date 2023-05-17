@@ -1,9 +1,4 @@
-$nombreJugador = widget["nombreJugador"].element["0001"].text;
+$nombreJugador = widget["wgJugador"].element["0001"].text;
 set_character_name("Ejecutivo", $nombreJugador);
-hide_widget("nombreJugador");
-$nombre=player.name;
-display_message("Bienvenido "+$nombre + " ,eres un ejecutivo en busca de una oportunidad laboral y deseas conocer la estructura de los sistemas de informacion de nuestra empresa");
-
-
-
-
+hide_widget("wgJugador");
+display_message("Bienvenido " + $nombreJugador + " ,eres un ejecutivo en busca de una oportunidad laboral y deseas conocer la estructura de los sistemas de informacion de nuestra empresa.", entity["secretaria"]);
