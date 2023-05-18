@@ -1,0 +1,8 @@
+$result = display_choices("Preguntas", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
+if $result == 0 then
+  player.stat["puntaje"] += 10;
+elseif $result != 0 then
+  player.stat["puntaje"] += 0;
+end;
+$puntaje=player.stat["puntaje"];
+display_message("su puntaje es: "+ $puntaje);

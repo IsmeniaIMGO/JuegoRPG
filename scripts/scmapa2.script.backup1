@@ -1,4 +1,2 @@
 lock_camera();
 move_camera(coord[2, -3, 16], coord[2, -3, 10]);
-show_widget("wgJugador");
-assign_entity_id(player, "Ejecutivo");

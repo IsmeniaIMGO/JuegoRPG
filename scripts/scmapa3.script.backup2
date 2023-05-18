@@ -1,0 +1,4 @@
+lock_camera();
+move_camera(coord[2, -4, 10], coord[2, -4, 10]);
+play_animation(entity["mesa"], "animacionMesa");
+play_animation(entity["mesa2"], "animacionMesa");

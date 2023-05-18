@@ -1,1 +1,4 @@
-display_message("Hello, world!");
+lock_camera();
+move_camera(coord[1, -4, 10], coord[1, -4, 10]);
+play_animation(entity["mesa"], "animacionMesa");
+play_animation(entity["mesa2"], "animacionMesa");

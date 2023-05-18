@@ -1,4 +1,6 @@
 $nombreJugador = widget["wgJugador"].element["0001"].text;
 set_character_name("Ejecutivo", $nombreJugador);
 hide_widget("wgJugador");
+assign_entity_id(entity["camion"], "camion");
+play_animation(entity["camion"], "animacionCarro");
 

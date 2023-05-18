@@ -1,4 +1,5 @@
 load_map("mapaEmpresa", coord[-2, -1, 0], SOUTH);
+play_animation(entity["camion"], "animacionCarro");
 show_widget("wgIndicaciones");
 
 
