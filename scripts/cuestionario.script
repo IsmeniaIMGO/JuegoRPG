@@ -65,20 +65,37 @@ end;
 $minuto2 = system.time["minute"];
 $segundo2 = system.time["second"];
 
+if $minuto2 < $minuto1 then
+	$minutoFinal = $minuto2+(60-$minuto1);
+elseif $minuto2 > $minuto1 then
+	$minutoFinal = $minuto2 - $minuto1;
+end;
+
+if $segundo2 < $segundo1 then
+	$segundoFinal = $segundo2+(60-$segundo1);
+elseif $segundo2 > $segundo1 then
+	$segundoFinal = $segundo2 - $segundo1;
+end;
+
 $puntaje = player.stat["puntaje"];
 $nombre = player.name;
 
-$minutoFinal = $minuto2 - $minuto1;
-$segundoFinal = $segundo2 - $segundo1;
-
 widget["ganador"].element["0008"].text = "Nombre: " + $nombre;
 widget["ganador"].element["0009"].text = "Puntaje: " + $puntaje;
-widget["ganador"].element["0010"].text = "Tiempo: " + $minutoFinal+" minutos con"+$segundoFinal+" segundos";
+widget["ganador"].element["0010"].text = "Tiempo: " + $minutoFinal+"min: "+$segundoFinal+"s";
 
 widget["perdedor"].element["0004"].text = "Nombre: " + $nombre;
 widget["perdedor"].element["0005"].text = "Puntaje: " + $puntaje;
-widget["perdedor"].element["0006"].text = "Tiempo:"+ $minutoFinal+" minutos con"+$segundoFinal+" segundos";
+widget["perdedor"].element["0006"].text = "Tiempo: "+ $minutoFinal+"min: "+$segundoFinal+"s";
 
-show_widget("ganador");
+
+if $puntaje >= 60 then
+	show_widget("ganador");
+elseif  $puntaje < 60 then
+	show_widget("perdedor");
+end;
+
+
+
 
 

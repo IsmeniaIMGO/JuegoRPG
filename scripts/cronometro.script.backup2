@@ -1,12 +1,51 @@
+//use system.time que me muestra la hora actual de nuestro sistema 
+//en forma de un codex con una clave y un valor
+//ejemplo: codex["hour":11,"minute";1,"second":57]
+display_message(system.time);
+
+//Tomamos el primer valor en el momento que queremos que comience nuestro cronometro
+//en mi caso el cronometro comienza cuando el usuario inicia el cuestionario
+//pero puede iniciar en la accion que ustedes quieran implementarlo
+//yo solo usare los minutos y segundos pero pueden usar la hora tambien
 $minuto1 = system.time["minute"];
 $segundo1 = system.time["second"];
 
+//el cuestionario 
+$eleccion = display_choices("Pregunta", array["respuesta1", "respuesta2", "respuesta3"], entity["profesor"]);
+if $eleccion == 0 then;
+	display_message("Correcto");
+elseif $eleccion != 0 then;
+	display_message("Incorrecto");
+end;
+
+//Tomamos el segundo valor en el momento en que el jugador termina el cuestionario
 $minuto2 = system.time["minute"];
 $segundo2 = system.time["second"];
 
-$minutoFinal = $minuto2 - $minuto1;
-$segundoFinal = $segundo2 - $segundo1;
-display_message($minutoFinal+" minutos con"+$segundoFinal+" segundos");
+//Explicacion: si el valor del minuto 2 es menor que el valor del minuto 1
+//ejemplo:$minuto1=56 y $minuto2=2, 
+//cuando restemos me da -54, un valor negativo y que no corresponde con el rango
+//real del minuto 56 al minuto 2 que serian 6 minutos
+//entonces el minuto final seria el valor del segundo minuto + la resta del
+//total de 1 minuto que son 60 con el valor del minuto1
+//ejemplo: $minuto1=56 y $minuto2=2
+//$minutoFinal = 2+(60-56)=6
+//sino si el valor del minuto 2 es mayor que el valor del minuto 1
+//simplemente se restan
+//ejemplo:  $minuto1=56 y $minuto2=58
+//$minutoFinal = 58-56 = 2
+if $minuto2 < $minuto1 then
+	$minutoFinal = $minuto2+(60-$minuto1);
+elseif $minuto2 > $minuto1 then
+	$minutoFinal = $minuto2 - $minuto1;
+end;
 
+//la misma logica para los segundos
+if $segundo2 < $segundo1 then
+	$segundoFinal = $segundo2+(60-$segundo1);
+elseif $segundo2 > $segundo1 then
+	$segundoFinal = $segundo2 - $segundo1;
+end;
 
-
+//mostramos el total
+display_message("Tiempo: "+ $minutoFinal+"min: "+$segundoFinal+"s");
