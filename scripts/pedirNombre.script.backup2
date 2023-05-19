@@ -1,3 +1,9 @@
 hide_widget("wgIndicaciones");
 show_widget("wgJugador");
 assign_entity_id(player, "Ejecutivo");
+$tiempoInicial = global.time;
+
+
+
+
+

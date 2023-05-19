@@ -1,66 +1,60 @@
+$minuto1 = system.time["minute"];
+$segundo1 = system.time["second"];
+
 $result1 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result1 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result1 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $result2 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result2 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result2 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $result3 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result3 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result3 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $result4 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result4 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result4 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $result5 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result5 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result5 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $result6 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result6 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result6 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $result7 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result7 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result7 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $result8 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result8 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result8 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $result9 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result9 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result9 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $result10 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result10 == 0 then
   player.stat["puntaje"] += 10;
@@ -68,6 +62,23 @@ elseif $result10 != 0 then
   player.stat["puntaje"] += 0;
 end;
 
-$puntaje=player.stat["puntaje"];
-$nombre=player.name;
-display_message($nombre+" su puntaje es: "+ $puntaje);
+$minuto2 = system.time["minute"];
+$segundo2 = system.time["second"];
+
+$puntaje = player.stat["puntaje"];
+$nombre = player.name;
+
+$minutoFinal = $minuto2 - $minuto1;
+$segundoFinal = $segundo2 - $segundo1;
+
+widget["ganador"].element["0008"].text = "Nombre: " + $nombre;
+widget["ganador"].element["0009"].text = "Puntaje: " + $puntaje;
+widget["ganador"].element["0010"].text = "Tiempo: " + $minutoFinal+" minutos con"+$segundoFinal+" segundos";
+
+widget["perdedor"].element["0004"].text = "Nombre: " + $nombre;
+widget["perdedor"].element["0005"].text = "Puntaje: " + $puntaje;
+widget["perdedor"].element["0006"].text = "Tiempo:"+ $minutoFinal+" minutos con"+$segundoFinal+" segundos";
+
+show_widget("ganador");
+
+

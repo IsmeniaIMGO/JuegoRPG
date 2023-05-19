@@ -1,2 +1,3 @@
 lock_camera();
 move_camera(coord[3, -4, 10], coord[3, -4, 10]);
+

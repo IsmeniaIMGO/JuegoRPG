@@ -1,0 +1,12 @@
+$minuto1 = system.time["minute"];
+$segundo1 = system.time["second"];
+
+$minuto2 = system.time["minute"];
+$segundo2 = system.time["second"];
+
+$minutoFinal = $minuto2 - $minuto1;
+$segundoFinal = $segundo2 - $segundo1;
+display_message($minutoFinal+" minutos con"+$segundoFinal+" segundos");
+
+
+
