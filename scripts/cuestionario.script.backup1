@@ -1,6 +1,5 @@
 $minuto1 = system.time["minute"];
 $segundo1 = system.time["second"];
-
 $result1 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
 if $result1 == 0 then
   player.stat["puntaje"] += 10;
@@ -61,33 +60,33 @@ if $result10 == 0 then
 elseif $result10 != 0 then
   player.stat["puntaje"] += 0;
 end;
-
 $minuto2 = system.time["minute"];
 $segundo2 = system.time["second"];
-
 if $minuto2 < $minuto1 then
-	$minutoFinal = $minuto2+(60-$minuto1);
+  $minutoFinal = $minuto2 + (60 - $minuto1);
 elseif $minuto2 > $minuto1 then
-	$minutoFinal = $minuto2 - $minuto1;
+  $minutoFinal = $minuto2 - $minuto1;
 end;
-
 if $segundo2 < $segundo1 then
-	$segundoFinal = $segundo2+(60-$segundo1);
+  $segundoFinal = $segundo2 + (60 - $segundo1);
 elseif $segundo2 > $segundo1 then
-	$segundoFinal = $segundo2 - $segundo1;
+  $segundoFinal = $segundo2 - $segundo1;
 end;
-
 $puntaje = player.stat["puntaje"];
 $nombre = player.name;
-
 widget["ganador"].element["0008"].text = "Nombre: " + $nombre;
 widget["ganador"].element["0009"].text = "Puntaje: " + $puntaje;
-widget["ganador"].element["0010"].text = "Tiempo: " + $minutoFinal+"min: "+$segundoFinal+"s";
-
+widget["ganador"].element["0010"].text = "Tiempo: " + $minutoFinal + "min: " + $segundoFinal + "s";
 widget["perdedor"].element["0004"].text = "Nombre: " + $nombre;
 widget["perdedor"].element["0005"].text = "Puntaje: " + $puntaje;
-widget["perdedor"].element["0006"].text = "Tiempo: "+ $minutoFinal+"min: "+$segundoFinal+"s";
+widget["perdedor"].element["0006"].text = "Tiempo: " + $minutoFinal + "min: " + $segundoFinal + "s";
 
-show_widget("ganador");
+play_music("examen.ogg", 0, false);
 
-
+if $puntaje >= 60 then
+  show_widget("ganador");
+  play_sound("ganar.wav");
+elseif $puntaje < 60 then
+  show_widget("perdedor");
+  play_sound("perder.wav");
+end;
