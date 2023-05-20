@@ -1,65 +1,68 @@
 $minuto1 = system.time["minute"];
 $segundo1 = system.time["second"];
-$result1 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
+
+$result1 = display_choices("¿Cuál es el propósito de los sistemas de información en una organización?", array["Recopilar, almacenar y procesar datos en una organización.", "Proporcionar entretenimiento a los empleados."], entity["profesor"]);
 if $result1 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result1 != 0 then
   player.stat["puntaje"] += 0;
 end;
-$result2 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
+$result2 = display_choices("¿Qué beneficios aporta una estructura sólida de sistemas de información en una empresa?", array["Mejorar las decisiones y la productividad de una empresa.", "Incrementar el caos y la confusión en la organización."], entity["profesor"]);
 if $result2 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result2 != 0 then
   player.stat["puntaje"] += 0;
 end;
-$result3 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
-if $result3 == 0 then
+$result3 = display_choices("¿Qué garantizan las estructuras de seguridad en los sistemas de información de una organización?", array["Exponer la información sensible y confidencial al público.", "Proteger la información sensible y confidencial."], entity["profesor"]);
+if $result3 == 1 then
   player.stat["puntaje"] += 10;
-elseif $result3 != 0 then
+elseif $result3 != 1 then
   player.stat["puntaje"] += 0;
 end;
-$result4 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
-if $result4 == 0 then
+$result4 = display_choices("¿Cuál es el enfoque del nivel táctico en una organización?", array["Supervisar eventos sociales en la empresa.", "Tomar decisiones a corto plazo y coordinar actividades diarias."], entity["profesor"]);
+if $result4 == 1 then
   player.stat["puntaje"] += 10;
-elseif $result4 != 0 then
+elseif $result4 != 1 then
   player.stat["puntaje"] += 0;
 end;
-$result5 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
+$result5 = display_choices("¿Qué tipo de sistemas de información se utilizan en el nivel táctico?", array["Sistemas de soporte a la toma de decisiones y sistemas de información para la administración.", "Sistemas de información para la administración de recursos humanos."], entity["profesor"]);
 if $result5 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result5 != 0 then
   player.stat["puntaje"] += 0;
 end;
-$result6 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
+$result6 = display_choices("¿Qué objetivo tiene el nivel operacional en una organización?", array["Mejorar la eficiencia de las operaciones diarias.", "Ignorar las tareas rutinarias y los procesos repetitivos."], entity["profesor"]);
 if $result6 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result6 != 0 then
   player.stat["puntaje"] += 0;
 end;
-$result7 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
-if $result7 == 0 then
+$result7 = display_choices("¿Qué papel desempeñan los sistemas de procesamiento de transacciones (TPS) en el nivel operacional?", array["Aumentar la complejidad de las operaciones diarias.", " Registrar y controlar transacciones rutinarias para garantizar operaciones eficientes."], entity["profesor"]);
+if $result7 == 1 then
   player.stat["puntaje"] += 10;
-elseif $result7 != 0 then
+elseif $result7 != 1 then
   player.stat["puntaje"] += 0;
 end;
-$result8 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
-if $result8 == 0 then
+$result8 = display_choices("¿Cuál es el enfoque del nivel estratégico en una organización?", array["Implementar cambios a corto plazo sin considerar el futuro.", "Tomar decisiones a largo plazo y planificar el rumbo futuro de la empresa."], entity["profesor"]);
+if $result8 == 1 then
   player.stat["puntaje"] += 10;
-elseif $result8 != 0 then
+elseif $result8 != 1 then
   player.stat["puntaje"] += 0;
 end;
-$result9 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
+$result9 = display_choices("¿Qué aportan los sistemas de información ejecutiva (EIS) al nivel estratégico?", array["Brindar información estratégica en tiempo real para tomar decisiones a largo plazo.", "Proporcionar información irrelevante y desactualizada"], entity["profesor"]);
 if $result9 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result9 != 0 then
   player.stat["puntaje"] += 0;
 end;
-$result10 = display_choices("Pregunta", array["respuesta", "respuesta", "respuesta"], entity["profesor"]);
+$result10 = display_choices("¿Cuál es el objetivo principal del nivel estratégico en una organización?", array["Establecer metas y objetivos a largo plazo para la organización.", "Centrarse únicamente en las operaciones diarias de la empresa."], entity["profesor"]);
 if $result10 == 0 then
   player.stat["puntaje"] += 10;
 elseif $result10 != 0 then
   player.stat["puntaje"] += 0;
 end;
+
+
 $minuto2 = system.time["minute"];
 $segundo2 = system.time["second"];
 if $minuto2 < $minuto1 then
@@ -72,8 +75,12 @@ if $segundo2 < $segundo1 then
 elseif $segundo2 > $segundo1 then
   $segundoFinal = $segundo2 - $segundo1;
 end;
+
+
 $puntaje = player.stat["puntaje"];
 $nombre = player.name;
+
+
 widget["ganador"].element["0008"].text = "Nombre: " + $nombre;
 widget["ganador"].element["0009"].text = "Puntaje: " + $puntaje;
 widget["ganador"].element["0010"].text = "Tiempo: " + $minutoFinal + "min: " + $segundoFinal + "s";

@@ -1,1 +1,2 @@
-display_message("Hello, world!");
+hide_widget("ganador");
+show_credits();

@@ -81,13 +81,13 @@ widget["perdedor"].element["0004"].text = "Nombre: " + $nombre;
 widget["perdedor"].element["0005"].text = "Puntaje: " + $puntaje;
 widget["perdedor"].element["0006"].text = "Tiempo: " + $minutoFinal + "min: " + $segundoFinal + "s";
 
+stop_music();
 
 if $puntaje >= 60 then
-  play_music("examen.ogg", 0, false);
+  $scores.push_back($nombre);
   show_widget("ganador");
   play_sound("ganar.wav");
 elseif $puntaje < 60 then
-  play_music("examen.ogg", 0, false);
   show_widget("perdedor");
   play_sound("perder.wav");
 end;

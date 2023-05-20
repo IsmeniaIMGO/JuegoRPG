@@ -1,0 +1,4 @@
+hide_widget("perdedor");
+play_music("examen.ogg");
+$puntaje = player.stat["puntaje"];
+player.stat["puntaje"] -= $puntaje;

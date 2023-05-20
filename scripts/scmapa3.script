@@ -1,4 +1,12 @@
 lock_camera();
 move_camera(coord[3, -4, 10], coord[3, -4, 10]);
-play_animation(entity["mesa"], "animacionMesa");
+play_animation(entity["mesa1"], "animacionMesa");
 play_animation(entity["mesa2"], "animacionMesa");
+play_animation(entity["mesa3"], "animacionMesa");
+play_animation(entity["mesa4"], "animacionMesa");
+play_animation(entity["mesa5"], "animacionMesa");
+play_animation(entity["mesa6"], "animacionMesa");
+play_animation(entity["mesa7"], "animacionMesa");
+play_animation(entity["mesa8"], "animacionMesa");
+play_animation(entity["mesa9"], "animacionMesa");
+play_animation(entity["mesa10"], "animacionMesa");
