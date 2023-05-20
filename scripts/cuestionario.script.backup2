@@ -84,7 +84,6 @@ widget["perdedor"].element["0006"].text = "Tiempo: " + $minutoFinal + "min: " + 
 stop_music();
 
 if $puntaje >= 60 then
-  $scores.push_back($nombre);
   show_widget("ganador");
   play_sound("ganar.wav");
 elseif $puntaje < 60 then
